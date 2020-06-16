@@ -2,10 +2,13 @@
 import React from 'react';
 import {useEffect} from 'react';
 
-import Loading from '../../components/Loading';
+import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+
 
 import Header from '../Header';
 import ProductList from '../ProductList';
+import ProductDetail from '../ProductDetail';
+
 
 import {setProducts} from '../../actions/productsActions';
 import {useSelector, useDispatch} from 'react-redux';
@@ -27,10 +30,21 @@ export default function App() {
 
 
     return (
-        <div>
-            <Header/>
-            <ProductList/>
-        </div>
+        <BrowserRouter>
+            <div>
+                <Header/>
+
+                <Switch>
+
+
+                    <Route exact path="/" component={ProductList}/>
+                    <Route exact path="/product/:id" component={ProductList}/>
+                
+                </Switch>
+
+            </div>
+        </BrowserRouter>
+
     );
 
 }
