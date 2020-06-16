@@ -1,6 +1,9 @@
 import React from 'react';
 import { FiShoppingBag } from "react-icons/fi";
 
+import {Link} from 'react-router-dom';
+
+
 
 export default function Header() {
     return (
@@ -9,8 +12,13 @@ export default function Header() {
             <div className="container">
                 <nav>
 
-                    <img className="logo" src="estilosa2.png" alt="estilosa"></img>
-                    <div className="logoname">estilosa</div>
+                    <Link to="/">
+                        <img className="logo" src="estilosa2.png" alt="estilosa"></img>
+                    </Link>
+                    
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                        <div className="logoname">estilosa</div>
+                    </Link>
 
 
                     <input className="search" type="text" name="" id=""/>

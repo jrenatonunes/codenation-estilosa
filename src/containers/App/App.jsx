@@ -30,20 +30,17 @@ export default function App() {
 
 
     return (
-        <BrowserRouter>
-            <div>
+        <div>
+            <BrowserRouter>
                 <Header/>
 
                 <Switch>
-
-
                     <Route exact path="/" component={ProductList}/>
-                    <Route exact path="/product/:id" component={ProductList}/>
-                
+                    <Route path="/product/:id" component={ProductDetail}/>
                 </Switch>
 
-            </div>
-        </BrowserRouter>
+            </BrowserRouter>
+        </div>
 
     );
 
